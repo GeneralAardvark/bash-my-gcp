@@ -1,18 +1,7 @@
 #!/bin/bash
 
 OURDIR=$(dirname "${BASH_SOURCE[0]}")
-for F in $OURDIR/lib/*-functions; do source "$F"; done
+#echo OURDIR="$OURDIR"
 
-## Auto complete - configs
-complete -F _gcp-config-profile gcp
-complete -F _gcp-console gconsole
-
-## Autocomplete - gci
-complete -F _gci-stop gci-stop
-complete -F _gci-start gci-start
-complete -F _gci-start gci-reset
-
-## Autocomplete - gcd
-complete -F _gcd-zones gcd-zones
-complete -F _gcd-zones gcd
-
+# shellcheck disable=SC1091
+source "$OURDIR/complete.sh"
